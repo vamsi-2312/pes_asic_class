@@ -252,7 +252,8 @@ int main()
 ![code_signed](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/1a4058a2-4773-4549-9377-019b49aafcad)
 ![exe_code_signed](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/9eb1d2ef-a5b0-4f8b-8eab-21b8a02820f6)
 <br>
-
+End of Day 1.
+<br>
 </details>
 
 <details>
@@ -260,6 +261,8 @@ int main()
 
 ## Contents of Day 2
 + Application Binary Interface(ABI)
++ ABI function calls
++ Running C program on RISC-V CPU
 
 ## Application Binary Interface
 An Application Binary Interface (ABI) defines how binary code interacts at a low level, specifying data structures, calling conventions, and system-level details to ensure compatibility between compiled software components on a given platform.
@@ -334,6 +337,82 @@ Because, all register has 5 bits of address, and **Total number of registers = 2
 These 32 registers are named as x0 till x31.<br>
 and given some function.<br>
 ![Screenshot from 2023-08-20 17-30-37](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/0339c4e1-6464-4f9f-bb1b-b751f1496135)
+<br>
 
+## ABI function calls
+Basic idea how we are going to call the function and execute the code.<br>
+![C_to_ASM](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/71436b7f-51ea-4837-930f-1572f4443caa)
+<br>
+
+#### Code(Contain's the function call(load))
+```
+#include <stdio.h>
+
+extern int load(int x, int y);
+
+int main()
+{
+	int result = 0;
+	int count = 9;
+	result = load(0x0, count+1);//function call
+	printf("Sum of numbers from 1 to %d = %d\n", count, result);
+	
+}
+```
+#### Assembly code of the above flow of instructions
+```
+.section .text
+.global load
+.type load, @function
+
+load:
+	add	a4, a0, zero //Initialize sum register a4 with 0x0
+	add	a2, a0, a1   // store count of 10 in register a2. Register a1 is loaded with 0xa (decimal 10) from main
+	add	a3, a0, zero // initialize intermediate sum register a3 by 0
+loop:	add	a4, a3, a4   // Incremental addition
+	addi	a3, a3, 1    // Incremental intermediate register by 1
+	blt	a3, a2, loop // If a3 is less than a2, branch to label named <loop>
+	add	a0, a4, zero // Store final result to register a0 so that it can be read by main program
+	ret 
+```
+
+#### Executing the code<br>
+![code](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d1e75c68-2cfc-47aa-ad91-763f39829efb)
+obj dump file<br>
+![obj_dump](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ebd5dca0-cd85-4d9a-93ea-86946585af58)
+We can see some of the ABI are updated according to our load.S code.
+<br>
+
+## Running C program on RISC-V CPU
+Before we can run the C program, we need to have the RISC-V CPU, testbench and other files.<br>
+open terminal.<br>
+```
+git clone https://github.com/kunalg123/riscv_workshop_collaterals.git
+```
+```
+cd riscv_workshop_collaterals/labs
+```
+We will abe able to see the files required installed.<br>
+To run the code.<br>
+```
+chmod 777 rv32im.sh
+```
+```
+./rv32im.sh
+```
+![Screenshot from 2023-08-20 19-59-59](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d555d95c-f668-43d6-9539-99acfaff54c0)
+<br>
+
+Flow of ecexuting the code on RISC-V CPU<br>
+![Screenshot from 2023-08-20 19-24-23](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fd9b0343-b81f-4e64-b20f-74d34e42b28d)
+
+**In upcomming Day 3,4,5 we are going to build our RISC-V processor from sratch and run our C code.**
+<br>
+End of Day 2.
+<br>
+</details>
+
+<details>
+<summary> Day 3 </summary><br>
 
 </details>
