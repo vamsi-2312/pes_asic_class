@@ -1,9 +1,30 @@
 # PES_ASIC_CLASS
 **Course Name** : VLSI Physical Design for ASICs  
 **Instructor** : Kunal Ghosh   
-**About Course** : In this course we are going to learn how to build a chip(RISC-V Architecture) and how are instructions from the software(application) are executed in the hardware(processor) and more.
+**About Course** : This course covers key aspects of RISC-V and chip design, spanning design cycles, RISC-V ISA, analog IPs, and mixed-signal flow. It delves into process design kits, libraries, RTL design synthesis, and gate-level simulation. The curriculum also includes RTL-to-GDS flow, encompassing SoC design implementation from floor planning to post-layout timing analysis.<br>
 
-## Introduction
+## Skill Outcomes
+1. Architectural Design
+2. RTL Design/Behavioral Modeling
+3. Floorplanning
+4. Placement
+5. CTS
+6. Routing 
+
+## Installation
+https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
+1. Open Terminal<br>
+2. Run the commands in run.sh file one after the another.
+
+## Course
+<details>
+<summary> Day 1 </summary><br>
+
+### Contents of Day 1
++ [Introduction](introduction)
++ [Program to compute the Sum of Natural numbers till n.](program-to-compute-the-sum-of-natural-numbers-till-n)
++ [Assembly code of C Program](assembly-code-of-sumnn.c)
+### Introduction
 Software --> **ISA** --> Hardware     
 **ISA** is Instruction Set Architecture: It the language the processor understands.   
 
@@ -14,12 +35,7 @@ Application(C code) -> Compiler(ISA) -> Assembler(Machine code) -> Processor
 3. Assembler Converts these instructions into machine code(binary).
 4. Processor only undersands o's and 1's.  
 
-## Course
-<details>
-<summary> Day 1 </summary><br>
-  
- **Program to compute the Sum of Natural numbers till n.**
-  <br>
+### Program to compute the Sum of Natural numbers till n.
   #### Code -> sumNn.c
   ```
   #include <stdio.h>
@@ -35,7 +51,7 @@ Application(C code) -> Compiler(ISA) -> Assembler(Machine code) -> Processor
     return 0;
   }
   ```
-1. Executing using GCC Complier<br>
+#### 1. Executing using GCC Complier<br>
    ```
    gcc sumNn.c -o sumNn.o
    ```
@@ -47,7 +63,7 @@ Application(C code) -> Compiler(ISA) -> Assembler(Machine code) -> Processor
    ![gcc_sumNn_c](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/6ba8d493-d782-454f-8fb6-c442ade80b72)
    <br>
 
-2. Executing using RISC-V Complier<br>
+#### 2. Executing using RISC-V Complier<br>
    Before executing we must export path.<br>
    ```
    export PATH="/home/home/riscv_toolchain/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin:$PATH"   
@@ -65,4 +81,6 @@ Application(C code) -> Compiler(ISA) -> Assembler(Machine code) -> Processor
    spike pk sumNn.o
    ```
    ![riscv_sumNn_c](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/7b4b9c2e-5dc8-4cf4-b203-28951304072b)
+
+### Assembly code of sumNn.c
 </details>
