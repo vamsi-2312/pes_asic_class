@@ -143,5 +143,19 @@ reg 0 sp
 The object dump file
 ![obj_dump](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/33db1008-ce14-4db4-9a71-899d5d50777c)
 ![D1_23_L3_code](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fe04100a-cdac-4134-9719-9756b6471258)
+<br>
+**lui** - load upper immediate
+**lui a0, %hi(.LC1)**<br>
+  lui destn_reg, offset(immediate_value) 
+<br>
+**addi** - add immediate<br>
+**addi destn_reg, src_reg_1, imm_value**
+<br>
+<br>
+**Byte Addressing** - It is the method in which each address location in the memory is having unique address of 1 Byte or 8 bit.
+In RISC-V architecture we use Byte addressing because it is much effecient use of memory.
+<br>
+And **each and every instruction** in RISC-v is of **32 Bit** in length.
+<br>
 
 </details>
