@@ -258,4 +258,78 @@ int main()
 <details>
 <summary> Day 2 </summary><br>
 
+## Contents of Day 2
++ Application Binary Interface(ABI)
+
+## Application Binary Interface
+An Application Binary Interface (ABI) defines how binary code interacts at a low level, specifying data structures, calling conventions, and system-level details to ensure compatibility between compiled software components on a given platform.
+<br>
+
+**Application software**  -(API)->  **Standard Libraries**  ->  **OS**  -(ISA)->  **Processor Architecture**  -(RTL)->  **Hardware**
+<br>
+API - Application Programming Interface<br>
+ISA - Intruction Set Architecture<br>
+RTL - Register transfer level<br>
+
+Some part of the ISA availabe to OS and to the User
+- User and System ISA
+- User ISA
+<br>
+
+Application program can access some of the system or hardware directly by **System Calls**(like accessing register).<br>
+We call this ABI aka Sytem call interface.<br>
+
+ABI <-register-> registers
+
+* RV32 has 32 32bit size registers.
+* RV64 has 32 64bit size registers.
+<br>
+
+There are 2 different ways to load the data
+1. Load and Store method.(RISC-V uses this method)
+2. Direct memory accessing.
+<br>
+
+RISC-V uses **Little endian** Memory Addressing, meaning the LSB is loaded first then till MSB.
+<br>
+
+**Intructions size is always ***32 bit*** no matter is RV32 or RV64.**
+<br>
+
+#### Basic Integer Instruction
+1. Load (I Type instruction)
+2. Add (R Type instruction)
+3. Store (S Type instruction)
+
+##### Load Instruction
+syntax - ld rd, imm(rs1);<br>
+ld = load doubleword<br>
+rd = destination register<br>
+rs1 = source register 1<br>
+imm = immediate value or offest<br>
+[immediate value][rs1][func3][rsd][opcode]<br>
+
+#### Add Instruction
+syntax - add rd, rs1, rs2;
+rd = destination register<br>
+rs1 = source register 1<br>
+rs2 = source register 2<br>
+[func7][rs2][rs1][func3][rd][opcode]<br>
+
+#### Store Instruction
+syntax - sd rs2,imm(rs1);
+sd = store doubleword<br>
+rs1 = source register 1<br>
+rs2 = source register 2<br>
+imm = immediaate value or offset<br>
+[imm(11:5)][rs2][rs1][func3][imm(4:0)][opcode]<br>
+
+**Instruction Format**
++ R Type : All the operands are of register type.
++ I Type : One immediate value of 12 bit is use along with registers.
++ S Type : Stores value has immediate value and register.
+
+#### Why are there only 32 registers in number?<br>
+Because, all register has 5 bits of address, and **Total number of registers = 2^5 = 32 registers**.<br> 
+
 </details>
