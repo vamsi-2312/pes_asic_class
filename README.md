@@ -16,6 +16,23 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 1. Open Terminal<br>
 2. Run the commands in run.sh file one after the another.
 
+## Day wise Contents
+### +  Contents of Day 1
+* Introduction
+* Program to compute the Sum of Natural numbers till n.
+* Assembly code of sumNn.c
+* Spike Simulations and Debug.
+* 64 Bit Signed ans Unsigned Binary Integer Numbers.
+* Program to find the maximum and minimum values of Signed and Unsigned numbers.
+  
+### + Contents of Day 2
+* Application Binary Interface(ABI)
+* ABI function calls
+* Running C program on RISC-V CPU
+
+### + Contents of Day 3
+*
+
 ## Course
 <details>
 <summary> Day 1 </summary><br>
