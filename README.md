@@ -21,9 +21,10 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 <summary> Day 1 </summary><br>
 
 ### Contents of Day 1
-+ [Introduction](introduction)
-+ [Program to compute the Sum of Natural numbers till n.](program-to-compute-the-sum-of-natural-numbers-till-n)
-+ [assembly-code-of-sumnn.c](https://github.com/vamsi-2312/pes_asic_class#assembly-code-of-sumnnc)
++ Introduction
++ Program to compute the Sum of Natural numbers till n.
++ Assembly code of sumNn.c
++ Spike Simulations and Debug.
 ### Introduction
 Software --> **ISA** --> Hardware     
 **ISA** is Instruction Set Architecture: It the language the processor understands.   
@@ -81,6 +82,66 @@ Application(C code) -> Compiler(ISA) -> Assembler(Machine code) -> Processor
    spike pk sumNn.o
    ```
    ![riscv_sumNn_c](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/7b4b9c2e-5dc8-4cf4-b203-28951304072b)
-
+   
 ### Assembly code of sumNn.c
+Run the code and check is ouput file is generated or not.<br>
+(view the code to complie sumNn.c in risc-v  complier above)<br>
+![D1_23_L2_code](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/23ea33f9-39dd-452e-b0fe-804f1dfe12dd)
+To view the assembly code of sumNn.c 
+```
+riscv64-unknown-elf-objdump -d sumNn.o | less
+```
+Since we have written our code in 'int main()'<br>
+Search main by typing
+```
+/main
+```
+Press 'n' so that the address where the main file is present.
+![less_main_no_instru](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/09db068c-ad45-4f1e-aac7-9a308f46603d)
+<br>
+To find the number of instructions in main file.
+To find the number of instructions<br>
+* **((Last address + 4) - initial address) / 4**
+* Using **-O1** to compile.
+  ![D1_23_L2_gen_of_op_file](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/e41bb0e1-02f7-43ff-82ca-1e9a63f0e0e0)
+
+  ![less_no_instru](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/9c2a0fda-ed31-45b5-bb02-50f70bdd173f)
+  ![less_no_instru_dec](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ff0f901b-d268-48b1-9bab-ea84dd065a03)
+  <br>
+  Got **11** instructions.
+* Usig **-Ofast** to complie.
+  ![D1_23_L2_code](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/91ceaaf0-461b-4405-bb18-ea119292ed11)
+  ![fast_no_instru_hexa](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b84020a8-5e1a-47ac-be8b-35e1defecb3f)
+  ![fast_no_instru_dec](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/4047f7f8-71f3-4dcb-9e9f-b06db83e8748)
+  <br>
+  Got **11** instructions.
+
+### Spike Simulations and Debug
+Compile the code in riscv compiler.<br>
+To debug 
+```
+spike -d pk sumNn.o
+```
+Run the code till the address 100b0.
+```
+until pc 0 100b0
+```
+To view the content of register.
+```
+reg 0 a0
+```
+Press ENTER to run the next command.<br>
+Then type 'reg 0 a0' see the content of a0, it will be updated.<br>
+```
+reg 0 sp
+```
+Next press ENTER to run the next command.<br>
+```
+reg 0 sp
+```
+'sp' register will be updated with addi command.<br>
+The object dump file
+![obj_dump](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/33db1008-ce14-4db4-9a71-899d5d50777c)
+![D1_23_L3_code](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fe04100a-cdac-4134-9719-9756b6471258)
+
 </details>
