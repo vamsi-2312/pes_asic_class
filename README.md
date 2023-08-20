@@ -423,7 +423,7 @@ chmod 777 rv32im.sh
 Flow of ecexuting the code on RISC-V CPU<br>
 ![Screenshot from 2023-08-20 19-24-23](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fd9b0343-b81f-4e64-b20f-74d34e42b28d)
 
-**In upcomming Day 3,4,5 we are going to build our RISC-V processor from sratch and run our C code.**
+**In upcomming Day 3,4,5 we are going to build our RISC-V processor from scratch and run our C code.**
 <br>
 End of Day 2.
 <br>
