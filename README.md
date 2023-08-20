@@ -20,7 +20,7 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 <details>
 <summary> Day 1 </summary><br>
 
-### Contents of Day 1
+## Contents of Day 1
 + Introduction
 + Program to compute the Sum of Natural numbers till n.
 + Assembly code of sumNn.c
@@ -28,7 +28,7 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 + 64 Bit Signed ans Unsigned Binary Integer Numbers.
 + Program to find the maximum and minimum values of Signed and Unsigned numbers.
 
-### Introduction
+## Introduction
 Software --> **ISA** --> Hardware     
 **ISA** is Instruction Set Architecture: It the language the processor understands.   
 
@@ -39,7 +39,7 @@ Application(C code) -> Compiler(ISA) -> Assembler(Machine code) -> Processor
 3. Assembler Converts these instructions into machine code(binary).
 4. Processor only undersands o's and 1's.  
 
-### Program to compute the Sum of Natural numbers till n.
+## Program to compute the Sum of Natural numbers till n.
   #### Code -> sumNn.c
   ```
   #include <stdio.h>
@@ -86,7 +86,7 @@ Application(C code) -> Compiler(ISA) -> Assembler(Machine code) -> Processor
    ```
    ![riscv_sumNn_c](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/7b4b9c2e-5dc8-4cf4-b203-28951304072b)
    
-### Assembly code of sumNn.c
+## Assembly code of sumNn.c
 Run the code and check is ouput file is generated or not.<br>
 (view the code to complie sumNn.c in risc-v  complier above)<br>
 ![D1_23_L2_code](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/23ea33f9-39dd-452e-b0fe-804f1dfe12dd)
@@ -119,7 +119,7 @@ To find the number of instructions<br>
   <br>
   Got **11** instructions.
 
-### Spike Simulations and Debug
+## Spike Simulations and Debug
 Compile the code in riscv compiler.<br>
 To debug 
 ```
@@ -161,7 +161,7 @@ In RISC-V architecture we use Byte addressing because it is much effecient use o
 And **each and every instruction** in RISC-v is of **32 Bit** in length.
 <br>
 
-### 64 Bit Signed ans Unsigned Binary Integer Numbers
+## 64 Bit Signed ans Unsigned Binary Integer Numbers
 - Humans understand **Decimal** numbers.
 - Computers understand **Binary** numbers.
 <br>
@@ -202,7 +202,7 @@ For 64 Bit --> (-2^64) to (2^64 - 1) = -9,223,372,036,854,775,808 to 9,223,372,0
 + Negative Number has MSB as **1** for Signed number.
 <br>
 
-### Program to find the maximum and minimum values of Signed and Unsigned numbers
+## Program to find the maximum and minimum values of Signed and Unsigned numbers
 
 <br>
 
