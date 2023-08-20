@@ -158,4 +158,51 @@ In RISC-V architecture we use Byte addressing because it is much effecient use o
 And **each and every instruction** in RISC-v is of **32 Bit** in length.
 <br>
 
+### 64 Bit Signed ans Unsigned Binary Integer Numbers
+- Humans understand **Decimal** numbers.
+- Computers understand **Binary** numbers.
+<br>
+  MSB - Most Significant Bit<br>
+  LSB - Least Significant Bit<br>
+<br>
+  * 1 Bit<br>
+  * 1 Byte = 8 Bits<br>
+  * 1 Halfword = 16 Bits<br>
+  * 1 Word = 32 Bits = 4 Bytes<br>
+  * 1 Doubleword = 64 Bits = 8 Bytes<br>
+
+#### Range of Unsigned Integers<br>
+For  n Bit --> 0 to (2^n - 1)<br>
+For  2 Bit --> 0 to (2^2 - 1) = 0 to 3<br>
+For  4 Bit --> 0 to (2^4 - 1) = 0 to 15<br>
+For 64 Bit --> 0 to (2^64 - 1) = 0 to 18446744073709551999<br>
+
+#### Range of Signed Integer<br>
+For  n Bit --> (-2^(n-1))  to (2^(n-1) - 1)<br>
+For  2 Bit --> (-2^1)  to (2^1 - 1)  = -2 to 1 <br>
+For  4 Bit --> (-2^4)  to (2^4 - 1)  = -8 to 7 <br>
+For 64 Bit --> (-2^64) to (2^64 - 1) = -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807<br>
+
+#### 2's Compliment(Representation of Negative Numbers in Binary)
+1. Write the magitude in binary format.
+2. Invert the numbers(0 -> 1)(1 -> 0).
+3. Add 1
+4. We have got the 2'c compliment form of the negative number.
+<br>
+
+( 2)dec = (0010)bin<br>
+(-2)dec = (1110)bin<br>
+<br>
+
+#### MSB for Signed Number
++ Postive Number has MSB as **0** for signed number.
++ Negative Number has MSB as **1** for Signed number.
+<br>
+
+
+</details>
+
+<details>
+<summary> Day 2 </summary><br>
+
 </details>
