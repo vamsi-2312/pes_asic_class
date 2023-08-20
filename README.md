@@ -201,6 +201,56 @@ For 64 Bit --> (-2^64) to (2^64 - 1) = -9,223,372,036,854,775,808 to 9,223,372,0
 + Negative Number has MSB as **1** for Signed number.
 <br>
 
+### Program to find the maximum and minimum values of Signed and Unsigned numbers
+
+<br>
+
+#### 1. For Unsigned Numbers.<br>
+
+#### Code
+```
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	unsigned long long int max = (unsigned long long int) (pow(2,64)-1);
+	unsigned long long int bey_max = (unsigned long long int) (pow(2,99)-1);
+	unsigned long long int min = (unsigned long long int) (pow(2,64)*-1);
+	unsigned long long int mid = (unsigned long long int) (pow(2,10)-1);
+	printf("The highest value of unsigned long long int = %llu\n",max);
+	printf("The value of bey_max(if value more than max) = %llu\n",bey_max);
+	printf("The lowest value of unsigned long long int = %llu\n",min);
+	printf("The value of mid = %llu\n",mid);
+	return 0;
+}
+```
+![code_unsigned](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/54928a06-d7ee-4ff9-bf84-739eae56800f)
+![exe_code_unsigned](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/00d452bd-bc10-4bf8-b6d9-cc7dfe77e2c9)
+<br>
+
+#### 2. For Signed Numbers.<br>
+
+```
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	long long int max = (long long int) (pow(2,63)-1);
+	long long int min = (long long int) (pow(2,63)*-1);
+	long long int bey_max = (long long int) (pow(2,99)-1);
+	long long int bey_min = (long long int) (pow(2,99)*-1);
+	printf("The maximum value of signed long long int = %lld\n",max);
+	printf("The minimum value of signed long long int = %lld\n",min);
+	printf("The value if beyond maximum = %lld\n",bey_max);
+	printf("The value if less then minimum = %lld\n",bey_min);
+	return 0;
+}
+```
+![code_signed](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/1a4058a2-4773-4549-9377-019b49aafcad)
+![exe_code_signed](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/9eb1d2ef-a5b0-4f8b-8eab-21b8a02820f6)
+<br>
 
 </details>
 
