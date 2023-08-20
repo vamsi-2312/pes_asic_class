@@ -23,7 +23,7 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 ### Contents of Day 1
 + [Introduction](introduction)
 + [Program to compute the Sum of Natural numbers till n.](program-to-compute-the-sum-of-natural-numbers-till-n)
-+ [Assembly code of C Program]([assembly-code-of-sumnn.c](https://github.com/vamsi-2312/pes_asic_class#assembly-code-of-sumnnc))
++ [assembly-code-of-sumnn.c](https://github.com/vamsi-2312/pes_asic_class#assembly-code-of-sumnnc)
 ### Introduction
 Software --> **ISA** --> Hardware     
 **ISA** is Instruction Set Architecture: It the language the processor understands.   
