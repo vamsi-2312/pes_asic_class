@@ -331,5 +331,9 @@ imm = immediaate value or offset<br>
 
 #### Why are there only 32 registers in number?<br>
 Because, all register has 5 bits of address, and **Total number of registers = 2^5 = 32 registers**.<br> 
+These 32 registers are named as x0 till x31.<br>
+and given some function.<br>
+![Screenshot from 2023-08-20 17-30-37](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/0339c4e1-6464-4f9f-bb1b-b751f1496135)
+
 
 </details>
