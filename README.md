@@ -607,4 +607,41 @@ Run the below commands in terminal
 sudo apt install gtkwave
 ```
 
+#### **Introduction of YOSYS**
+
+**Synthsizer** : Tool used for converting the RTL(Register Transfer Level) to netlistt.<br>
+
++ RTL - Anything that can be synthsisable.
++ Netlist - A textual description of a circuit made of components(such as gates, etc).
+
+**YOSYS** : Synthsizer<br>
+
+[[ Design ][ .lib ]] --> [ YOSYS ] --> [ Netlist file ]<br>
+
+.lib - The file is an ASCII representation og the timing and power parameters associated with any cell in a particular foundry.<br>
+
+**Working of Yosys**<br>
+* Step 1 : To read the design.
+```
+read_verilog
+```
+* Step 2 : To read the .lib file.
+```
+read_liberty
+```
+* Step 3 : To write the output in netlist file from the synthesizer.
+```
+write_verilog
+```
+
+**NOTE : **<br>
+The netlist file is the representation of the design in the form of standard cells(these cells come from the .lib file).<br>
+
+How to verify th Synthesis?<br>
+[[ Netlist ][ Test bench ]] --> [ IVERILOG ] --> [ VCD file ] --> [ GTK Wave ]<br>
+
+Vcd file : comprises a header section with date, simulator, and timescale information; a variable definition section; and a value change section, in that order.(the output is in the form of wave).<br>
+
+Iverilog is a "simulator"
+
 </details>
