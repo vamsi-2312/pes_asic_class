@@ -757,6 +757,20 @@ show
 
 ![Screenshot from 2023-08-27 16-49-57](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/99fac8f0-28db-425e-94fb-fbaa93ef66e2)
 
+![WhatsApp Image 2023-08-28 at 00 29 10](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/cd76983d-ab61-449d-8458-cd23e0d5a9ce)
 
+To view the netlist, we are going to write in another .v file<br>
+```
+write_verilog -noattr good_mux_netlist.v
+```
+Then to view the netlist code
+```
+gvim good_mux_netlist.v
+```
+![netlist_1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d99311cd-9f05-4a14-8fc3-631ffc3bbd70)
+
+or<br>
+
+![netlist_2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/90b04bf7-c5e6-4c72-888c-6941253fa6ca)
 
 </details>
