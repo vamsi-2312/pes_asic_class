@@ -567,6 +567,44 @@ gvim tb_good_mux.v -o good_mux.v
 
 #### Installation of Yosys<br>
 
+Run the below command in terminals to install **Yosys**.
+```
+git clone https://github.com/YosysHQ/yosys.git
+```
+```
+cd yosys
+```
+```
+sudo apt install make
+```
+```
+sudo apt-get update
+```
+```
+sudo apt-get install build-essential clang bison flex  libreadline-dev gawk tcl-dev libffi-dev git  graphviz xdot pkg-config python3 libboost-system-dev libboost-python-dev libboost-filesystem-dev zlib1g-dev
+```
+```
+make config-gcc
+```
+```
+make
+```
+```
+sudo make install
+```
+After installation
+```
+yosys
+```
+![Screenshot from 2023-08-27 16-51-41](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/47c82b86-98f6-4ae5-a86d-b9efef1c424a)
 
+show yosys is installed and version
+
+#### Installation of GTK Wave
+
+Run the below commands in terminal
+```
+sudo apt install gtkwave
+```
 
 </details>
