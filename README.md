@@ -708,5 +708,31 @@ Synthesis steps :
 2. Mapping the ports.
 3. Mapping the cells that can be used in the design.
 
+## Labs using Yosys and Sky130 library
+
+How to use Yosys<br>
+
+change the directory to the location where the folder verilog_files is present.<br>
+```
+cd /sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+then start yosys<br>
+```
+yosys
+```
+
+![Screenshot from 2023-08-27 16-51-41](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/3da71f2f-fb72-40f8-b0a9-881c5acaf078)
+
+To read the lbrary file
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+To read the design file
+```
+read_verilog good_mux.v
+```
+![Screenshot from 2023-08-27 16-53-20](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/a9fad7d3-2a97-4a1b-83ee-845c510ab946)
+
+
 
 </details>
