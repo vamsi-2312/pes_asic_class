@@ -1,0 +1,3 @@
+For Day 1 we have used existing codes and testbenches.
+
+I am attaching the design and test bench files.
