@@ -42,7 +42,9 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 * Labs using Yosys and Sky130 library
 
 ### + Contents of Day 2
-* 
+* Introduction to timing .lib
+* Hierarchical vs Flat Synthesis
+* Various Flop Coding styles and Optimsation
 
 ## Course
 <details>
@@ -774,5 +776,10 @@ or<br>
 ![netlist_2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/90b04bf7-c5e6-4c72-888c-6941253fa6ca)
 
 There are many ways to write the code form multiplexer but in our case it is using terenary operator -> [] ? [] : []<br>
+
+</details>
+
+<details>
+<summary>Week 2 -> Day 2 </summary><br>
 
 </details>
