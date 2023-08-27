@@ -692,10 +692,21 @@ To ensure that there are no HOLD time constraints at the next flip flop, we need
 
 ![Screenshot from 2023-08-27 23-44-07](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/41fba451-fa28-4f6b-ac16-600dd684ec1e)
 
+##### **Finally we have to choose which type of cells to use.**<br>
 
+Charging and Discharging is done by capacitors in the circuits.<br>
 
+| Faster cells | Slower cells |
+| ------------ | ------------ |
+| Wide transistors, low delay but needs more area and power. | Narrow transistors, more delay but requires less area and power. |
 
+Hence we need to provide guidance to the sysntesizer which are called constraints.<br>
 
+Synthesis steps :
+
+1. Check syntax in code.
+2. Mapping the ports.
+3. Mapping the cells that can be used in the design.
 
 
 </details>
