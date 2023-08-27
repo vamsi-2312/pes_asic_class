@@ -662,6 +662,8 @@ Combinational delay in logic path determines the maximum speed f operaion of dig
 
 [ Flip flop A ] --> [Combinational Logic ] --> [ Flip flop B ]<br>
 
+![Screenshot from 2023-08-27 23-44-31](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/882c682f-e53a-4c73-ad1c-08513ebf52a5)
+
 What is the maximum speed it can work?<br>
 
 What is the max clock rate?<br>
@@ -680,6 +682,17 @@ f(clk,Max) = 1 / t(clk,min)<br>
 
 For the circuit to work faster, we need lesser t(clk).<br>
 Then we need **Faster working cells**.<br>
+
+Then when do we need slow working cells?<br>
+
+To prevent any missing of any values.<br>
+To ensure that there are no HOLD time constraints at the next flip flop, we need the cells to work slowly.<br>
+
+![Screenshot from 2023-08-27 23-45-21](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/7d035d49-c66f-4486-8bf8-ffd308108802)
+
+![Screenshot from 2023-08-27 23-44-07](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/41fba451-fa28-4f6b-ac16-600dd684ec1e)
+
+
 
 
 
