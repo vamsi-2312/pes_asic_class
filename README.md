@@ -642,6 +642,12 @@ How to verify th Synthesis?<br>
 
 Vcd file : comprises a header section with date, simulator, and timescale information; a variable definition section; and a value change section, in that order.(the output is in the form of wave).<br>
 
-Iverilog is a "simulator"
+Iverilog is a "simulator"<br>
+THe output must be same as RTL output.<br>
+
+**NOTE :**<br>
+The set of primary inputs / primary outputs will remain same betweeen RTL anf Netlist --> The same Test Bench can be used.(because of same primary inputs).<br>
+
+
 
 </details>
