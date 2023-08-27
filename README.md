@@ -773,4 +773,6 @@ or<br>
 
 ![netlist_2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/90b04bf7-c5e6-4c72-888c-6941253fa6ca)
 
+There are many ways to write the code form multiplexer but in our case it is using terenary operator -> [] ? [] : []<br>
+
 </details>
