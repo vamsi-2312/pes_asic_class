@@ -648,6 +648,41 @@ THe output must be same as RTL output.<br>
 **NOTE :**<br>
 The set of primary inputs / primary outputs will remain same betweeen RTL anf Netlist --> The same Test Bench can be used.(because of same primary inputs).<br>
 
+#### **Logic Synthisis**
+
+RTL DEsign -  Behavioral representation of requires specification.(verilog or system verilog code).<br>
+
+[ RTL ] --> [ Synthesis ] --> [ Gate Level translation ]<br>
+The design is cnverted into gates and conncetions is made.(aka NETLIST).<br>
+
+.lib - Collection of logical modules, buckets of standard cells(different flavous, functionalities)<br>
+
+Why different flavors of gate?<br>
+Combinational delay in logic path determines the maximum speed f operaion of digital logic circuit.<br>
+
+[ Flip flop A ] --> [Combinational Logic ] --> [ Flip flop B ]<br>
+
+What is the maximum speed it can work?<br>
+
+What is the max clock rate?<br>
+
+**Tclk** is one on and one off state.<br>
+
+![Screenshot from 2023-08-27 23-45-02](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/9e0219c7-004d-4427-9d99-fdd3f34a65b9)
+
+![Screenshot from 2023-08-27 23-44-19](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/5239a2f4-ea9d-4dcd-88c9-18a0aa738864)
+
+tpcq - propagation delay of combinational circuit<br>
+
+when the logic value is either in tpcq or tsetup then the **value must be stable**.<br>
+
+f(clk,Max) = 1 / t(clk,min)<br>
+
+For the circuit to work faster, we need lesser t(clk).<br>
+Then we need **Faster working cells**.<br>
+
+
+
 
 
 </details>
