@@ -37,7 +37,7 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 
 ### + Contents of Day 1
 * Introduction to Open Source Simulator - IVERILOG
-* Lab using Iverilog and GTKWAVE
+* Installation and Lab using Iverilog and GTKWAVE
 * Introduction to Yosys and Logic Synthesis
 * Labs using Yosys and Sky130 library
 
@@ -473,5 +473,100 @@ The Test Bench is used to check the **Functionality** if it is working as expect
 [[Design][Test bench]] --> [IVERILOG SIMU.] --> vcd file generation --> [GTK Wave]<br>
 
 We use a software called GTK Wave for **viewing the ***output waveforms*****.<br>
+
+## Installation and Lab of Iverilog and GTK Wave
+
++ Step 1 : Installation of **VSDFLOW**
+
+Execute the following commands one after the another.<br>
+```
+sudo apt-get install git
+```
+```
+git clone https://github.com/kunalg123/vsdflow.git
+```
+```
+cd vsdflow
+```
+```
+chmod 777 opensource_eda_tool_install.sh
+```
+```
+sudo ./opensource_eda_tool_install.sh
+```
+```
+./vsdflow spi_slave_design_details.csv
+```
+```
+./vsdflow picorv32_design_details.csv
+```
+Please refer the below link if you face an issues.<br>
+https://www.vlsisystemdesign.com/probable-errors-while-installing-vsdflow-and-its-solutions/<br>
+
++ Step 2 : Installation of Sky130 Library
+
+Execute the following commands in another terminal one after the another.<br>
+```
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+```
+After cloning, lets see what we have installed<br>
+```
+cd sky130RTLDesignAndSynthesisWorkshop/
+```
+To see all the design and respective testbench files
+```
+cd verilog_files
+```
+```
+ls
+```
+![Screenshot from 2023-08-27 22-11-27](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/aef79242-651c-4600-a374-d809bf9a438c)
+<br>
+To see the library file
+```
+cd sky130RTLDesignAndSynthesisWorkshop/
+```
+```
+cd my_lib
+```
+```
+ls
+```
+![Screenshot from 2023-08-27 22-14-23](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/adc4698e-10d9-480f-9aa2-f4fe02df333b)
+
+How to simulate the design in Iverilog (we are using god_mux.v as example which is already present in the verilog folder)<br>
+```
+iverilog good_mux.v tb_good_mux.v
+```
+The output is generated and stored in a.out file(which is default because we didnt specify any output file name)
+```
+./a.out
+```
+Next we are going to open the .vcd file in GTK wave
+```
+gtkwave tb_good_mux.vcd
+```
+Then we should drag the ports from the UUT into the signals region, and the zoom to fit the waveform so that we can view the entire waveform in less space.
+![gtk_test_1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/5adce324-6967-45ad-8212-cd1d19c47d0a)
+
+Next,<br>
+Let us look into what is present in these design and testbench files
+```
+cd sky130RTLDesignAndSynthesisWorkshop/
+```
+```
+cd verilog_files
+```
+```
+gvim tb_good_mux.v -o good_mux.v
+```
+![Screenshot from 2023-08-27 15-58-42](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ba9cb4d4-70f0-454b-8217-ba895a8be57d)
+
+
+## Introduction to Yosys and Logic Synthesis
+
+#### Installation of Yosys<br>
+
+
 
 </details>
