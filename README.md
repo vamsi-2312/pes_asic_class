@@ -17,6 +17,9 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 2. Run the commands in run.sh file one after the another.
 
 ## Day wise Contents
+
+### Week 1
+
 ### +  Contents of Day 1
 * Introduction
 * Program to compute the Sum of Natural numbers till n.
@@ -30,12 +33,20 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 * ABI function calls
 * Running C program on RISC-V CPU
 
-### + Contents of Day 3
-*
+### Week 2
+
+### + Contents of Day 1
+* Introduction to Open Source Simulator - IVERILOG
+* Lab using Iverilog and GTKWAVE
+* Introduction to Yosys and Logic Synthesis
+* Labs using Yosys and Sky130 library
+
+### + Contents of Day 2
+* 
 
 ## Course
 <details>
-<summary> Day 1 </summary><br>
+<summary> Week 1 -> Day 1 </summary><br>
 
 ## Contents of Day 1
 + Introduction
@@ -274,7 +285,7 @@ End of Day 1.
 </details>
 
 <details>
-<summary> Day 2 </summary><br>
+<summary> Week 1 -> Day 2 </summary><br>
 
 ## Contents of Day 2
 + Application Binary Interface(ABI)
@@ -423,13 +434,44 @@ chmod 777 rv32im.sh
 Flow of ecexuting the code on RISC-V CPU<br>
 ![Screenshot from 2023-08-20 19-24-23](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fd9b0343-b81f-4e64-b20f-74d34e42b28d)
 
-**In upcomming Day 3,4,5 we are going to build our RISC-V processor from scratch and run our C code.**
+**Later in this course we are going to build our RISC-V processor from scratch and run our C code.**
 <br>
 End of Day 2.
 <br>
 </details>
 
 <details>
-<summary> Day 3 </summary><br>
+<summary>Week 2 -> Day 1 </summary><br>
+
+## Contents of Day 1
+
+* Introduction to Open Source Simulator - IVERILOG
+* Lab using Iverilog and GTKWAVE
+* Introduction to Yosys and Logic Synthesis
+* Labs using Yosys and Sky130 library
+
+## Introduction to Simulator(Open source)
+
++The verification of RTL design's compliance with specifications is accomplished through simulation of the design.<br>
++Simulator is used to simulate the design.<br>
+
+We are going to use a **Simulator** known as **IVERILOG**.<br>
+
+The Test Bench is used to check the **Functionality** if it is working as expected or not.<br>
+
+- The design file is written in HDL(Hardware Descriptive Language - verilog or system verilog)
+- The test bench is also written in HDL.
+
+**The SIMULATOR works upon change in input and then the output will be EVALUATED.**<br>
+
+#### + Working of TEST BENCH<br>
+
+[Stimulus Generator] --inputs--> [Design] --outputs--> [Stimulus Observer]<br>
+
+#### + Working of IVERILOG<br>
+
+[[Design][Test bench]] --> [IVERILOG SIMU.] --> vcd file generation --> [GTK Wave]<br>
+
+We use a software called GTK Wave for **viewing the ***output waveforms*****.<br>
 
 </details>
