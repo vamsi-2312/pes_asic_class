@@ -733,6 +733,30 @@ read_verilog good_mux.v
 ```
 ![Screenshot from 2023-08-27 16-53-20](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/a9fad7d3-2a97-4a1b-83ee-845c510ab946)
 
+**We must get Successfully finished Verilog frontend.**<br>
+
+To Synthesis the design
+```
+synth -top good_mux
+```
+syntax - synth -top <module_name><br>
+
+![Screenshot from 2023-08-27 16-54-10](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/c6bbe6c3-0ec4-4c9c-975c-beb0a8f1ec6f)
+
+To convert rtl to gates and what gates used in library or netlist.<br>
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![Screenshot from 2023-08-27 16-56-12](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/6531fcd2-549d-4e74-9e88-e92ce37277fc)
+
+To see the netlist
+```
+show
+```
+![Screenshot from 2023-08-27 16-56-35](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b75febbc-5c77-4c9e-bebf-ad11d26d5491)
+
+![Screenshot from 2023-08-27 16-49-57](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/99fac8f0-28db-425e-94fb-fbaa93ef66e2)
+
 
 
 </details>
