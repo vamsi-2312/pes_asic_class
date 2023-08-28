@@ -782,4 +782,81 @@ There are many ways to write the code form multiplexer but in our case it is usi
 <details>
 <summary>Week 2 -> Day 2 </summary><br>
 
+## Contents of Day 2
+
+* Introduction to timing .lib
+* Hierarchical vs Flat Synthesis
+* Various Flop Coding styles and Optimsation
+
+## Introduction to timing .lib
+
+Lets go through library<br>
+.lib is a collection of the standard cells, etc.<br>
+
+To view .lib file, first we need to change the directory<br>
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+Then type
+```
+gvim ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![Screenshot from 2023-08-28 14-18-47](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ce5bbfb3-2c49-48f3-85df-8c14bc3b759c)
+
+To display the line numbers<>
+Press **Shift + : **<br>
+then
+```
+se nu
+```
+
+To turn off the syntax check<br>
+Press **Shift + : **<br>
+then
+```
+syn off
+```
+
+**NOTE : We must not Edit this file.** <br>
+
+***Now Lets us Understand the name of our library file.*** <br>
+
+![Screenshot from 2023-08-28 14-27-53](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/f9653a8d-1f4a-442e-8fff-e5e238f0d56f)
+
++ **sky130** : The library is using 130nm foundry.<br>
++ **tt** : typical process<br>
++ **025C** : 25 degree Celcius temperature.<br>
++ **1v8** : Voltage<br>
++ **Technology** : CMOS<br>
++ **Delay model** : lookup table<br>
+
+#### Units
++ **time units** : 1ns<br>
++ **Voltage units** : 1V<br>
++ **Leakage Power units** : 1nW<br>
++ **Current unit** : 1mA<br>
++ **Pulling resistance units** : 1Kohms<br>
++ **Capacitance units** : 1pF<br>
+
+![Screenshot from 2023-08-28 14-28-05](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ad3f1ad9-e1d9-4217-962f-6404423bbbfb)
+
++ **Operations Conditions :**<br>
+voltage : 1.8<br>
+processor : 1.00<br>
+temperature : 25.00<br>
+tree_type : balanced tree<br>
+
+![Screenshot from 2023-08-28 14-28-23](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/2ec2d903-e65d-4b30-b0b6-dbfd3c0ce64b)
+
+#### **PVT : Process Voltage Temperature**
+PVT is very important for the design to work.<br>
+**Process Variation** : Variation due to fabrication, we wont get 
+
+Library is having cells, to view them<br>
+Press **/**<br>
+then
+```
+cell 
+```
+
 </details>
