@@ -850,7 +850,17 @@ tree_type : balanced tree<br>
 
 #### **PVT : Process Voltage Temperature**
 PVT is very important for the design to work.<br>
-**Process Variation** : Variation due to fabrication, we wont get 
+
+* **Process Variation** : Variation due to fabrication, we wont get exacty same fabrication output everytime. There would be some variations(very small).<br>
+* **Voltage Variation** : When we vary voltage there is going to be variation in the behavior of the circuit.<br>
+* **Temperature Variation** : Semiconductors are very sensitve to temerature.<br>
+
+PVT determines how my IC is going to work, either faster or slower.<br>
+
+No matter any variations we wat the IC to work without any issues or without any change in the expected output.<br>
+eg. Amplifer, we are usign mos in the ampifer which is sensitive to temperature, if we are using the amplifer either in Thar desert or Himalayas we need it work as expected.<br>
+
+**There for we need to factor in the variations while we are designing the circuit.** <br>
 
 Library is having cells, to view them<br>
 Press **/**<br>
@@ -858,5 +868,18 @@ then
 ```
 cell 
 ```
+we are to view a cell 
+* leakage power of all combinaions of inputs
+
+![Screenshot from 2023-08-28 14-45-36](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/70ff14f4-afeb-4f57-ab0c-ff05fe59b339)
+
+* Capacitance and internal power of ports  and Area
+
+![Screenshot from 2023-08-28 14-45-52](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b05baedb-1d7d-487f-afab-b25a0cf49c77)
+
+* Timing
+
+![Screenshot from 2023-08-28 14-46-44](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d561e235-9205-4357-ac4a-07920e333b53)
+
 
 </details>
