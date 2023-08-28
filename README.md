@@ -885,11 +885,46 @@ To see the verilog model of the cell<br>
 ```
 sp ../my_lib/verilog_mode/sky130_fd_sc_hd__a2111o.behavioral.v
 ```
+(🟥NOTE🟥: The below three images of verilog modules are from **gedit text editor** and not gvim as it wasnt showing me the verilog module, you can use the above code in gvim if it works for you.)<br>
+
 ![Screenshot from 2023-08-28 15-16-31](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/722b33d9-3cc7-46dc-b751-7e147e02b09a)
 
 ![Screenshot from 2023-08-28 15-17-43](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/781d0748-0782-43e1-8eb7-9407f38dd167)
 
 ![Screenshot from 2023-08-28 15-18-21](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/721c221f-a2ba-4d5e-90e1-55ead02caff6)
 
+To search a word in gvim
+```
+/<word you want to search>
+```
+**Comparing the types of flavors of a cell(and2)** <br>
+type in gvim
+```
+:vsp
+```
+then
+```
+:vs
+```
+and one more time
+```
+:vs
+```
+Then we would have threee windows of the same file.<br>
+
+In each page search **and2_0**, **and2_2**, **and2_4**
+
+![Screenshot from 2023-08-28 15-42-24](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/daf3c93e-b60d-477d-a660-3cd8493cedff)
+
+We can observe that the area of and2_0 is smaller than and2_4.<br>
+
+**Larger Area** => Wider trasistors => less delay(faster charging and discharging of capacitors, but occupies more area and draws more power.)<br>
+
+**Smaller Area** => Narrower transistors => more delay(slower charging and dischaging of capacitors, occupies less area and uses less power.)<br>
+
+The verilog module of and2<br>
+(🟥NOTE🟥 : The below  image are from gedit text editor and not gvim as it wasnt showing me the verilog module)<br>
+
+![Screenshot from 2023-08-28 15-19-39](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fe70c728-5345-4f83-b415-76c22ebe511a)
 
 </details>
