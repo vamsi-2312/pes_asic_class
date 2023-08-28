@@ -869,7 +869,7 @@ then
 cell 
 ```
 we are to view a cell 
-* leakage power of all combinaions of inputs
+* leakage power of all combinaions of inputs(we will have 32 combinations because 5 input, 2^5=32)
 
 ![Screenshot from 2023-08-28 14-45-36](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/70ff14f4-afeb-4f57-ab0c-ff05fe59b339)
 
@@ -880,6 +880,16 @@ we are to view a cell
 * Timing
 
 ![Screenshot from 2023-08-28 14-46-44](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d561e235-9205-4357-ac4a-07920e333b53)
+
+To see the verilog model of the cell<br>
+```
+sp ../my_lib/verilog_mode/sky130_fd_sc_hd__a2111o.behavioral.v
+```
+![Screenshot from 2023-08-28 15-16-31](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/722b33d9-3cc7-46dc-b751-7e147e02b09a)
+
+![Screenshot from 2023-08-28 15-17-43](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/781d0748-0782-43e1-8eb7-9407f38dd167)
+
+![Screenshot from 2023-08-28 15-18-21](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/721c221f-a2ba-4d5e-90e1-55ead02caff6)
 
 
 </details>
