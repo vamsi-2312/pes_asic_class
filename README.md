@@ -1045,4 +1045,21 @@ To prevent these glitches from happening we use flip flops in between the combin
 The initial state of flip flops can be set either using **Reset or Set** and the also we have **synchronous and Asynchronous**.
 * Synchronous - the output will be reset or set only at the edge of clock
 * Asynchronous -  the output will be reset or set immediately when reset or set is high.
+
+Different Types of Flip Flops:<br>
+1. Synchronous Reset D Flip Flop
+2. Asynchronous Reset D Flip Flop
+3. Asynchronous and Synchronous Reset D Flip Flop
+
+![WhatsApp Image 2023-09-03 at 17 37 08](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/102d8f17-c8d3-4391-822b-f3085869bc57)
+
+![1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/0bfbe092-f1dc-417a-8021-7fad23e2a20c)
+
+![2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/4e5d2578-4c7b-467a-8dba-45b2591c52c6)
+
+![3](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/127c9ce1-ace8-417e-82d2-fbb83b944e7b)
+
+The always statement is evaluated only if there is change in the value of the elements of **Sensitivity List**.<br>
+
+
 </details>
