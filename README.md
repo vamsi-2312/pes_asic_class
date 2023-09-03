@@ -1170,4 +1170,59 @@ show
 ```
 ![41](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b9dfeced-da06-4593-b134-3ae4f3ebaf92)
 
+Multiplication Circuit
+```
+gvim mult_*.v -o
+```
+```
+yosys
+```
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+read_verilog mult_2.v
+```
+```
+synth -top mul2
+```
+![11](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/967ddd36-0d0e-42c0-959f-fe910c7e4151)
+
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![12](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/66f2de11-7965-4ff7-bd21-50338cd7cf66)
+
+```
+show
+```
+![13](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b602bdba-55cc-4fc6-8edc-225268354950)
+
+```
+read_verilog mult_8.v
+```
+```
+synth -top mult8
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/a389e259-1214-4ffc-8917-82f87a18028d)
+
+For multiplication by 2 we are adding one binary 0 at the end of orignial binary value (LEFT SHIFT)
+
+| INP | OUTP |
+|-----|------|
+| 000(0) | 0000(0) |
+| 001(1) | 0010(2) |
+| 010(2) | 0100(4) |
+| 011(3) | 0110(6) |
+| 100(4) | 1000(8) |
+| 101(5) | 1010(10) |
+| 110(6) | 1100(12) |
+| 111(7) | 1110(14) |
+
 </details>
