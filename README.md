@@ -927,6 +927,8 @@ The verilog module of and2<br>
 
 ![Screenshot from 2023-08-28 15-19-39](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fe70c728-5345-4f83-b415-76c22ebe511a)
 
+## Hierarchical vs Flat Synthesis
+
 What is meant by synth -top?<br>
 With this command we can synthesize the entire top module or indivisual module
 > synth -top <module_name>
@@ -1036,6 +1038,7 @@ show
 ```
 ![Screenshot from 2023-09-03 16-00-01](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d216b5d2-ed55-4511-b408-d05fbd54c4a7)
 
+## Various Flop Coding styles and Optimsation
 
 #### Why are Flip Flops used?
 
@@ -1082,5 +1085,7 @@ D flip flop with Synchronous Reset(dff_syncres)
 D flip flop with Asynchronous and Synchronous Reset(dff_asyncres_syncres)
 ![41](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/02f8d1b2-06e6-41f5-81ff-a6873f903f98)
 ![42](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ab6c6c0d-7c95-4ef0-aec2-1422b4782d6c)
+
+
 
 </details>
