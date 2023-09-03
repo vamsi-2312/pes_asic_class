@@ -1068,24 +1068,106 @@ Lets check the waveforms of the D flip flops
 
 ![Screenshot from 2023-09-03 18-36-54](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/7c414c0e-7a8a-403b-af45-408139e7b017)
 
-D flip flop with Asynchronous Reset(dff_asyncres)
++ D flip flop with Asynchronous Reset(dff_asyncres)
 ![Screenshot from 2023-09-03 18-26-49](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/a809c943-f913-4a50-b9c2-26191d9a8400)
 ![Screenshot from 2023-09-03 18-27-03](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/349b0135-c282-4fd0-9b97-753d91eea9ce)
 ![Screenshot from 2023-09-03 18-27-14](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/73e52d50-c500-4ec8-8155-a3cbfdb74245)
 
-D flip flop with Asynchronous with Set(dff_async_set)
++ D flip flop with Asynchronous with Set(dff_async_set)
 ![Screenshot from 2023-09-03 18-28-45](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b7adf6dd-a842-42d6-aea5-fdfb1ed0f3be)
 ![Screenshot from 2023-09-03 18-28-52](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b67a656c-8cd6-478e-8753-db1d5b7b5f5a)
 ![Screenshot from 2023-09-03 18-30-05](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/a11dacf5-0267-4f3a-b125-fb6b3304012f)
 
-D flip flop with Synchronous Reset(dff_syncres)
++ D flip flop with Synchronous Reset(dff_syncres)
 ![31](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/c80a17d3-203f-4e33-853d-04d57d044ac0)
 ![32](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/55e9e555-c30f-426c-ae1c-0c2169f62beb)
 
-D flip flop with Asynchronous and Synchronous Reset(dff_asyncres_syncres)
++ D flip flop with Asynchronous and Synchronous Reset(dff_asyncres_syncres)
 ![41](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/02f8d1b2-06e6-41f5-81ff-a6873f903f98)
 ![42](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ab6c6c0d-7c95-4ef0-aec2-1422b4782d6c)
 
+Checking the Design of Flip Flops
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+```
+yoys
+```
+```
+read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
++ D flip flop with Asynchronous Reset(dff_asyncres)
+```
+read_verilog dff_asyncres.v
+```
+```
+synth -top dff_asyncres
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![11](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/5b92e680-953e-4f64-ad63-b541fc0c3b28)
 
++ D flip flop with Asynchronous with Set(dff_async_set)
+```
+read_verilog dff_async_set.v
+```
+```
+synth -top dff_async_set
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![21](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/34b83f55-3e4d-46e0-b037-8ba9cdf16691)
+
++ D flip flop with Synchronous Reset(dff_syncres)
+```
+read_verilog dff_syncres.v
+```
+```
+synth -top dff_syncres
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![31](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/f1d26b91-964c-456b-beb0-65b949ead28d)
+
+![WhatsApp Image 2023-09-03 at 19 16 00](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b5984ac6-796d-4e6c-b943-d597988fe1e0)
+
++ D flip flop with Asynchronous and Synchronous Reset(dff_asyncres_syncres)
+```
+read_verilog dff_asyncres_syncres.v
+```
+```
+synth -top dff_asyncres_syncres
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![41](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b9dfeced-da06-4593-b134-3ae4f3ebaf92)
 
 </details>
