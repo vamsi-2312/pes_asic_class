@@ -1214,15 +1214,48 @@ show
 
 For multiplication by 2 we are adding one binary 0 at the end of orignial binary value (LEFT SHIFT)
 
-| INP | OUTP |
-|-----|------|
-| 000(0) | 0000(0) |
-| 001(1) | 0010(2) |
-| 010(2) | 0100(4) |
-| 011(3) | 0110(6) |
-| 100(4) | 1000(8) |
-| 101(5) | 1010(10) |
-| 110(6) | 1100(12) |
-| 111(7) | 1110(14) |
+| INP(%b) | INP(%d) | OUTP(%b) | OUTP(%d) |
+|-----|------|-----|-----|
+| 000 | (0) | 0000 | (0) |
+| 001 | (1) | 0010 | (2) |
+| 010 | (2) | 0100 | (4) |
+| 011 | (3) | 0110 | (6) |
+| 100 | (4) | 1000 | (8) |
+| 101 | (5) | 1010 | (10) |
+| 110 | (6) | 1100 | (12) |
+| 111 | (7) | 1110 | (14) |
+
+similary for mult_8 we have to add 3 binary 0 to the end of the orignal binary value.<br>
+
+Now lets see multiplication of a number by 9.
+![WhatsApp Image 2023-09-03 at 20 33 35](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/90f725d4-8f30-4863-8f43-6cd30e38a63f)
+```
+yosys
+```
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+read_verilog mult_8.v
+```
+```
+synth -top mult8
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![show](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/67eb59fa-1e8e-4f0e-b3f8-53db32c04114)
+```
+write_verilog -noattr mult8_net.v
+```
+```
+gvim mult8_net.v
+```
+![net](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/45a02ad8-84dc-42ed-b999-6ce475443a48)
+
+End of Week 2 Day 2
 
 </details>
