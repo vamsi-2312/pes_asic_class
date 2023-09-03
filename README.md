@@ -1061,5 +1061,26 @@ Different Types of Flip Flops:<br>
 
 The always statement is evaluated only if there is change in the value of the elements of **Sensitivity List**.<br>
 
+Lets check the waveforms of the D flip flops
+
+![Screenshot from 2023-09-03 18-36-54](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/7c414c0e-7a8a-403b-af45-408139e7b017)
+
+D flip flop with Asynchronous Reset(dff_asyncres)
+![Screenshot from 2023-09-03 18-26-49](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/a809c943-f913-4a50-b9c2-26191d9a8400)
+![Screenshot from 2023-09-03 18-27-03](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/349b0135-c282-4fd0-9b97-753d91eea9ce)
+![Screenshot from 2023-09-03 18-27-14](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/73e52d50-c500-4ec8-8155-a3cbfdb74245)
+
+D flip flop with Asynchronous with Set(dff_async_set)
+![Screenshot from 2023-09-03 18-28-45](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b7adf6dd-a842-42d6-aea5-fdfb1ed0f3be)
+![Screenshot from 2023-09-03 18-28-52](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b67a656c-8cd6-478e-8753-db1d5b7b5f5a)
+![Screenshot from 2023-09-03 18-30-05](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/a11dacf5-0267-4f3a-b125-fb6b3304012f)
+
+D flip flop with Synchronous Reset(dff_syncres)
+![31](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/c80a17d3-203f-4e33-853d-04d57d044ac0)
+![32](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/55e9e555-c30f-426c-ae1c-0c2169f62beb)
+
+D flip flop with Asynchronous and Synchronous Reset(dff_asyncres_syncres)
+![41](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/02f8d1b2-06e6-41f5-81ff-a6873f903f98)
+![42](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ab6c6c0d-7c95-4ef0-aec2-1422b4782d6c)
 
 </details>
