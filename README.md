@@ -927,4 +927,113 @@ The verilog module of and2<br>
 
 ![Screenshot from 2023-08-28 15-19-39](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fe70c728-5345-4f83-b415-76c22ebe511a)
 
+What is meant by synth -top?<br>
+With this command we can synthesize the entire top module or indivisual module
+> synth -top <module_name>
+
+We are also going to see what is **hierarchial and flatten synthesis** :<br>
+
+we are going to use multiple_modules.v<br>
+
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+```
+gvim mulitple_modules.v
+```
+
+![1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/76662b8a-9f8c-4a8a-bc3c-b839e133eaee)
+![WhatsApp Image 2023-09-03 at 16 25 04](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/c6b8a89f-5971-4c37-8ebb-4d53e2ffb2c9)
+
+Then lauch yosys
+```
+yosys
+```
+reading library
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+reading verilog file
+```
+read_verilog multiple_modules.v
+```
+![2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/5a27faa6-d3a8-4425-a913-de987b9477fd)
+![3](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/5098451d-c840-4e7d-bffd-e6f2fdd56761)
+
+synthesizing the code
+```
+synth -top multiple_modules
+```
+linking design to library
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+to dsplay the design
+```
+show multiple_modules
+```
+![hier_dsgn_4](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/7eb4ca53-3063-42c1-ba3f-61932a0e3d57)
+
+writing out the netlist
+```
+write_verilog -noattr multiple_modules_hier.v
+```
+to view the netlist
+```
+!gvim multiple_modules_hier.v
+```
+![6](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/2d37066f-f39c-4438-a850-2f9ce7019b5b)
+![7](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d16b5ab5-0366-405f-9f05-4e9411e4d688)
+
+The above netlist code is from the hierarchial synthesis.<br>
+
+now lets go to flatten<br>
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+read_verilog multiple_modules.v
+```
+```
+synth -top multiple_modules
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+now we need to flatten the netlist
+```
+flatten
+```
+```
+write_verilog -noattr multiple_modules_flat.v
+```
+```
+!gvim multiple_modules_flat.v
+```
+![89](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/2cba67a1-5e66-4ac3-9dfb-5527f2849cea)
+```
+show
+```
+![flat_dsgn_11](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/3a05fcef-aaba-4dee-aea5-221ba0ad78dd)
+
+In the flattened netlist we cant see submodules being initialised as in hierarchial.(Everything is initialised under multiple_modules)<br>
+
+To synthesize indvidual module
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+read_verilog multiple_modules.v
+```
+```
+synth -top sub_module1
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![Screenshot from 2023-09-03 16-00-01](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d216b5d2-ed55-4511-b408-d05fbd54c4a7)
+	
 </details>
