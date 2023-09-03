@@ -1035,5 +1035,14 @@ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 ![Screenshot from 2023-09-03 16-00-01](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d216b5d2-ed55-4511-b408-d05fbd54c4a7)
-	
+
+
+#### Why are Flip Flops used?
+
+for example if we are having a combinational circuit should be givving an stable output for the previous inputs and next inputs, but due to different delays of the cells inside could change the output value, which is called as **Gitches**. And if there are many other combinational circuit is series then there would be more glitches.
+These glitches could change the entre expected output.
+To prevent these glitches from happening we use flip flops in between the combinational circuits and which will give the output at the positive edge or negative edge of the clock and would be stable untill the next clock, by this method all the glitches are reduced.
+The initial state of flip flops can be set either using **Reset or Set** and the also we have **synchronous and Asynchronous**.
+* Synchronous - the output will be reset or set only at the edge of clock
+* Asynchronous -  the output will be reset or set immediately when reset or set is high.
 </details>
