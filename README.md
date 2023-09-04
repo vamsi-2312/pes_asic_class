@@ -52,6 +52,11 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 * Sequential Logic Optimisation.
 * Sequential Optimisation for unused outputs.
 
+### + Contents of Day 4
+* GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+* Labs on GLS, Synthesis-Simulation mismatch
+* Labs on Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+
 ## Course
 <details>
 <summary> Week 1 -> Day 1 </summary><br>
@@ -1661,4 +1666,26 @@ show
 The expression is Q = <br>
 Q = ((count[0])+(count[1])+(count[2])')'<br>
 Q = (count[2]).(count[1])'.(count[2])'
+
+End of Week 2 Day 3.
+</details>
+
+<details>
+<summary> Week 2 -> Day 4 </summary><br>
+	
+## Contents of Day 4
+* GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+* Labs on GLS, Synthesis-Simulation mismatch
+* Labs on Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+
+## GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+
+
+## Labs on GLS, Synthesis-Simulation mismatch
+
+
+## Labs on Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+
+
+
 </details>
