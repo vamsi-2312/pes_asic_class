@@ -1680,6 +1680,47 @@ End of Week 2 Day 3.
 
 ## GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
 
+GLS -Gate Level Simulation
+Gate-level simulation, often referred to as GLS (GLS-Gate Level Simulation), is a critical step in electronic design verification. It assesses the functionality and timing of a digital circuit at the gate level, providing a more accurate representation of hardware behavior compared to higher-level abstractions. GLS ensures that the synthesized netlist, comprising logic gates and flip-flops, behaves as intended and meets timing constraints, enhancing the reliability of integrated circuits in various applications, from consumer electronics to aerospace systems.<br>
+
+* Running the test bench with Netlist as Design Under Test
+* Netlist is logically same as RTL Code.
+	* Same Test Bench will align with the Design
+	
+Why do we need GLS?
+* Verification is logic is correct or not.
+* Ensuring the timing of the design is met.
+	* For this GLS needs to be run with delay annoations.(not now)
+
+![iv_wok](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/990a261d-1135-4650-8c04-bd2b8ad5611c)
+
+Note: If the Gate level Models are delay annotated, then we can use GLS for timing vadiation
+
+
+Synthesis Simulation Mismatch could happen because of the following:
+* Missing Sensitivity list
+* Blocking vs Non Blocking Assignments
+* Non Standard Verilog Coding
+
+### Missing Senstivty list
+always statement gets evaluated if there is change in the value of sensitivity list and if any port is missing the always statement wouldnt get executed and would result in a different result.<br>
+
+to prevent this we can use always@(*), which will evaluate is there is any change in the inputs.<br>
+
+### Blocking and Non Blocking Statements in Verilog
+
+Inside always block
+
+* = --> Blocking
+	* Executes the statements in the order it is written in.
+	* First satement is evaluated  before the next statement.
+* <= --> Non Blocking
+	* Executes all the RHS when always block is entered and assigns to RHS
+	* Prallel Evaluation
+	
+
+To prevent error use **non blocking statments for writing sequential cicuits**.<br>
+
 
 ## Labs on GLS, Synthesis-Simulation mismatch
 
