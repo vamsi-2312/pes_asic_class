@@ -1830,6 +1830,58 @@ We can observe that is GLS we are getting the expected output.
 
 ## Labs on Synthesis-Simulation mismatch and Blocking/Non-blocking statements
 
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+```
+iverilog blocking_caveat_net.v tb_blocking_caveat_net.v
+```
+```
+./a.out
+```
+```
+gtkwave tb_blocking_caveat_net.v
+```
+![gtk_1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/840fbf8d-f5be-47df-a583-bd9a93fc9e8f)
 
+
+```
+yosys
+```
+```
+read_liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+read_verilog blocking_caveat.v
+```
+```
+synth -top blocking_caveat
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+write_verilog -noattr blocking_caveat_net.v
+```
+```
+show
+```
+![s1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/49864a8c-fba1-4544-978c-cd93852b159e)
+
+to invoke the GLS<br>
+come outside yosys<br>
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v  blocking_caveat_net.v tb_blocking_caveat.v
+```
+```
+./a.out
+```
+```
+gtkwave tb_blocking_caveat.v
+```
+![gls_gtk_1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/758c3559-3586-4715-9ccb-f85ce7928f33)
+
+We can observe the difference in betweeen the normal gtkwave waveforms and gls waveforms.<br>
+Hence we need to be very very careful while useing bocking and non blocking statements.<br>
 
 </details>
