@@ -1724,6 +1724,109 @@ To prevent error use **non blocking statments for writing sequential cicuits**.<
 
 ## Labs on GLS, Synthesis-Simulation mismatch
 
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+```
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v 
+```
+```
+./a.out
+```
+```
+gtkwave tb_ternary_operator_mux.vcd
+```
+![er_iv_gtk](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/82b7a738-20ff-4cbd-86af-aae75ef7c358)
+
+```
+yosys
+```
+```
+read_liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+read_verilog ternary_opertator_mux.v
+```
+```
+synth -top ternary_operator_mux
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+write_verilog -noattr ternary_opertator_mux_net.v
+```
+```
+show
+```
+![s1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/dd87c4c5-d214-4836-bf27-708e5910f081)
+
+to invoke the GLS<br>
+come outside yosys<br>
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v 
+```
+```
+./a.out
+```
+```
+gtkwave tb_ternary_operator_mux.v
+```
+![gls_gtk1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/734c0d56-0307-4197-bb98-20f2f39d9f9c)
+
+next
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+```
+iverilog bad_mux.v tb_bad_mux.v 
+```
+```
+./a.out
+```
+```
+gtkwave tb_bad_mux.vcd
+```
+![ive_gtk_2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/dae45a44-7aef-42e4-89be-88e7f6d172ae)
+
+```
+yosys
+```
+```
+read_liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+read_verilog bad_mux.v
+```
+```
+synth -top bad_mux
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+write_verilog -noattr bad_mux_net.v
+```
+```
+show
+```
+![s2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/fba71373-b584-4fdf-b2fe-41db8cb1a85b)
+
+
+to invoke the GLS<br>
+come outside yosys<br>
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v 
+```
+```
+./a.out
+```
+```
+gtkwave tb_bad_mux.v
+```
+![gls_gtk2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/14e2d60a-be3a-4d69-93f4-65a574889c4a)
+
+We can observe that is GLS we are getting the expected output.
 
 ## Labs on Synthesis-Simulation mismatch and Blocking/Non-blocking statements
 
