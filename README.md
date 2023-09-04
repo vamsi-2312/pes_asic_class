@@ -46,6 +46,12 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 * Hierarchical vs Flat Synthesis
 * Various Flop Coding styles and Optimsation
 
+### + Contents of Day 3
+* Introduction to Optimisation.
+* Combinational Logic Optimisation.
+* Sequential Logic Optimisation.
+* Sequential Optimisation for unused outputs.
+
 ## Course
 <details>
 <summary> Week 1 -> Day 1 </summary><br>
@@ -1257,5 +1263,201 @@ gvim mult8_net.v
 ![net](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/45a02ad8-84dc-42ed-b999-6ce475443a48)
 
 End of Week 2 Day 2
+
+</details>
+
+<details>
+<summary>Week 2 -> Day 3 </summary><br>
+
+## Contents of Week 2 Day 3
+1. Introduction to Optimisation.
+2. Combinational Logic Optimisation.
+3. Sequential Logic Optimisation.
+4. Sequential Optimisation for unused outputs.
+
+## Introduction to Optimisation
+
+### Logical Optimisation
+There are two types of optimisations, combinational and sequential logic optimisation
+
+Combinational logic optimisation
+* squeez the logic to get the most effectient design, Area and Power saving.
+* Constant Propagtion
+	* Direct Optimisation
+* Boolean Logic Optimisation
+	*K amp
+	* Quine McKluskey
+
+### Constant Propagation example
+Y=((AB)+C)'<br>
+if A or B = 0<br>
+then Y = C'<br>
+which can simplified into an inverted with input C<br>
+![cpeg](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/3c2f445f-13d8-4ca2-add1-f404ca6588f9)
+
+and the original circuit uses 6 Transistors and while the inverter only uses 2 Transistors, we have saved in area and power.<br>
+
+### Boolean Logic Optimsation
+assign y = a?(b?c:(c?a:0)):(!c)<br>
+
+this terenary operator statement has boiled down to a xnor gate.<br>
+
+### Sequential Logic optimisation
+* Basic
+	* Sequential constant propagation 
+* Advanced(not part of our course)
+	* State optmisation
+	* Retiming
+	* Sequentil logic cloning(Floor plan aware synthesis)
+
+Sequential Constant Propagation
+Assume we have a D flip flop with reset, and the input is 0.<br>
+when Reset = 1, Q = 0<br>
+When Reset = 0, Q = D = 0<br>
+No matter during the reset or clock the output of flip flop is always 0.<br>
+then we can use q = 0.
+
+similary if we a SET D flip flop, we cant assign Q = 0, because<br>
+when Set = 1, Q = 1<br>
+When Set = 0, Q = D = 0<br>
+Here we need to use the flip flop itself, because the output of D flip flop is not at a stable value.<br>
+
+* State Optimization: State optimization is a technique in sequential logic design where unused or redundant flip-flops (state elements) in a digital circuit are identified and removed to reduce the hardware's complexity and power consumption, without affecting its functionality.<br>
+
+* Retiming: Retiming is a sequential logic optimization method that involves rearranging the placement of flip-flops in a digital circuit to improve its critical path timing, making it faster while maintaining the same functionality and minimizing the need for additional hardware.<br>
+
+* Sequential Logic Cloning: Sequential logic cloning is a technique that duplicates specific parts of a circuit to create multiple parallel paths for data processing. This can enhance performance by allowing for parallel processing of data, but it may increase hardware complexity and power consumption.<br>
+
+## Combinational Logic Optimisation
+Multiplexer and other logic based on input are being simplified into basic gates.<br>
+![code](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/25ee71c9-7629-43a0-964d-a2faa30b79c4)
+
+![code2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ff9b8315-fff1-4b19-be7e-1c55c04da47b)
+
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+```
+yoys
+```
+```
+read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+**opt_check.v**
+```
+read_verilog opt_check
+```
+```
+synth -top opt_check
+```
+```
+opt_clean -purge
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![oc1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/c420430c-4a73-47dc-8ffd-d7c64ea3a3c9)
+
+
+**opt_check2.v**
+```
+read_verilog opt_check2
+```
+```
+synth -top opt_check2
+```
+```
+opt_clean -purge
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![oc2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/cfa97c58-b7ec-464b-a283-3dfb8a75b331)
+
+**opt_check3.v**
+```
+read_verilog opt_check3
+```
+```
+synth -top opt_check3
+```
+```
+opt_clean -purge
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![oc3](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/bc2a49e8-a9db-4daa-bc80-dfcde0c75e4a)
+
+**opt_check4.v**
+```
+read_verilog opt_check4
+```
+```
+synth -top opt_check4
+```
+```
+opt_clean -purge
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![oc4](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/8d302f65-a3c1-4c88-a1c2-ed3e528e9ca0)
+
+**multiple_module_opt.v**
+```
+read_verilog multiple_module_opt
+```
+```
+synth -top multiple_module_opt
+```
+```
+flatten
+```
+```
+opt_clean -purge
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![mo1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/80f1be7e-2817-49ae-8dcc-c51d4a2d874a)
+
+
+**multiple_module_opt2.v**
+```
+read_verilog multiple_module_opt2
+```
+```
+synth -top multiple_module_opt2
+```
+```
+flatten
+```
+```
+opt_clean -purge
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![mo2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/73e377fe-d0a6-444c-bcf7-f32003f708b2)
+
 
 </details>
