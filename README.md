@@ -1609,7 +1609,56 @@ show
 from the above image we can observe only on flip flop is being used.<br>
 
 now lets see what will happen is 3 bit of output are used.<br>
+(outside yosys)<br>
 
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+```
+cp counter_opt.v counter_opt2.v
+```
+```
+gvim counter_opt2.v
+```
+change the output to 3 bit
+```
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
 
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+endmodule
+```
+![c2_code](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/d621741c-2a7c-47a9-9754-fc2fd5a262c4)
 
+```
+yosys
+```
+```
+read_verilog counter_opt2.v
+```
+```
+synth -top counter_opt
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![c2_show](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/53153edd-33bb-4a66-a2f8-800f53e18542)
+
+![c_exp](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/f369d5a8-2fef-444d-b283-034c04dd7e12)
+The expression is Q = <br>
+Q = ((count[0])+(count[1])+(count[2])')'<br>
+Q = (count[2]).(count[1])'.(count[2])'
 </details>
