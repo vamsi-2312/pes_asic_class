@@ -1459,5 +1459,121 @@ show
 ```
 ![mo2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/73e377fe-d0a6-444c-bcf7-f32003f708b2)
 
+## Sequential Logic Optimisation.
+We are going to see the optimisation of sequential logic which is having d flip flops<br>
+
+code of dff_const<br>
+
+![code_1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/35544a87-39dd-42a3-ac8f-6e8385ee1d81)
+![code_2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/76898070-0ed6-4c8d-8e48-b5f12edf6030)
+
+![gtkcode1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/2fb71c98-2379-46fd-8e76-7f64824c9c59)
+![gtkcode2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/766584bf-7062-47a2-9dbc-a2f9d7fca112)
+
+![gtk1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/77c3c37b-7c03-419d-8255-9b041e5c7ba2)
+![gtk2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/0af333e2-0502-4ecf-8874-936032446482)
+![gtk3](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/e968cf1d-c9f7-4c12-ba08-780952c7ca14)
+![gtk4](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/60363019-a909-4f59-abdd-1d218650ad5d)
+![gtk5](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/1f4184e3-b092-40ea-9b51-e8ab5823c10d)
+
+```
+yosys
+```
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+**dff_const1.v**
+```
+read_verilog dff_const1.v
+```
+```
+synth -top dff_const1
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![s1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ca086f46-4128-4eb7-9752-09bd958081e3)
+
+**dff_const2.v**
+```
+read_verilog dff_const2.v
+```
+```
+synth -top dff_const2
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![s2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/828bb066-220e-47e4-9c8d-c85963d2457b)
+
+**dff_const3.v**
+```
+read_verilog dff_const3.v
+```
+```
+synth -top dff_const3
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![s3](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/e720930e-0b46-4a6f-922f-847f59340746)
+
+**dff_const4.v**
+```
+read_verilog dff_const4.v
+```
+```
+synth -top dff_const4
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![s4](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/4e60cd2a-0c26-402e-898d-92dc05b89a6a)
+
+**dff_const5.v**
+```
+read_verilog dff_const5.v
+```
+```
+synth -top dff_const5
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![s5](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/033c4b2f-b887-4776-bf30-263bbd54bf8e)
+
+
+
+
 
 </details>
