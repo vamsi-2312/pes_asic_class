@@ -1572,7 +1572,43 @@ show
 ```
 ![s5](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/033c4b2f-b887-4776-bf30-263bbd54bf8e)
 
+## Sequential Optimisation for unused outputs.
 
+Now we are going to see the optimisation of unused logic.<br>
+3 bit Up counter<br>
+the 3 bit upcounter uses 3 flip flops but we are using only one bit of output and leaving the other 2 bits unused, and those unused 2 flipflops are removed and only one is being used.<br>
+
+![code_c1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/dbd62ed8-f157-47d1-852e-2979f583f689)
+
+```
+cd ~/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+```
+yoys
+```
+```
+read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+read_verilog counter_opt.v
+```
+```
+synth -top counter_opt
+```
+```
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+```
+show
+```
+![c1_show](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/a4d8a5e2-364d-4800-a649-e4b4a96b56ca)
+
+from the above image we can observe only on flip flop is being used.<br>
+
+now lets see what will happen is 3 bit of output are used.<br>
 
 
 
