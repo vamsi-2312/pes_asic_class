@@ -57,6 +57,13 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 * Labs on GLS, Synthesis-Simulation mismatch
 * Labs on Synthesis-Simulation mismatch and Blocking/Non-blocking statements
 
+### Week 3
+
+### + Contents of Day 1
+* How to talk to computers.
+* Soc Design and Openlane
+* Open Source EDA Tools.
+
 ## Course
 <details>
 <summary> Week 1 -> Day 1 </summary><br>
@@ -1883,5 +1890,36 @@ gtkwave tb_blocking_caveat.v
 
 We can observe the difference in betweeen the normal gtkwave waveforms and gls waveforms.<br>
 Hence we need to be very very careful while useing bocking and non blocking statements.<br>
+
+</details>
+
+<details>
+	
+<summary> Week 3 -> Day 1 </summary><br>
+
+## Contents of Day 1
++ How to talk to computers.
++ Soc Design and Openlane
++ Open Source EDA Tools.
+
+## How to talk to computers.
+
+### Chip design
+image 1
+let get inside a chip
+image 2
+(before ths class we call as system but nw we call as package)
+image 3
+
+PADS - the ways signal comes inside or goes outside<br>
+CORE - all the digital logic recides<br>
+DIE - size of the chip<br>
+
+Foundry IP's - PLL,adc,dac,sram<br>
+foundry - factory where chip get manufactured<br>
+macros - Soc, SPI<br>
+
+## Soc Design and Openlane
+## Open Source EDA Tools.
 
 </details>
