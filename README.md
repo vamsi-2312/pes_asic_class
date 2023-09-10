@@ -2074,12 +2074,15 @@ In terminal
 cd Desktop
 ```
 
-we will be using sky130 pdk<br>
+we will be using sky130 pdk
 
-i1
-i2
-i3
-image1
+![where_are_going_to_work](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/9654c6a3-a4ac-48c6-8a82-03f9ff011d02)
+
+tools files
+![Screenshot from 2023-09-10 22-17-15](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/2c5665ec-c584-4d1a-ab9e-6d7251a11f37)
+
+process files
+![process](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/f1e1dd15-6447-43fa-ae97-c52f3cafad74)
 
 Openlane is used to automate rtl to gds flow<br>
 
@@ -2089,28 +2092,37 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane
 ```
 docker
 ```
-img1
+![img1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/145fec86-ee03-4572-a416-1edad8c2186d)
+
 ```
 ./flow.tcl -interactive
 ```
-image2
+![image2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b689f828-1417-40a6-a991-adae241ff318)
+
 ```
 package reqire openlane 0.9
 ```
 list of designs already present in openlane
-image3
-image4
-image5
+
+![image3](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/5fb6b67d-f0b3-41c7-a520-ea40267f3581)
+
+![image4](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/bfa68954-a442-490e-b34c-da5c46aa1e1f)
+
+![image5](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/72da3e4f-80fb-456a-86ea-83ec31322bbf)
+
 
 design setup stage(preparing stage)
 ```
 prep -design picorv32a
 ```
-image6
+
+![image6](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/00304a58-d8bb-474d-90c9-827da5225060)
 
 we can see that runs getting created
-image 7
-image 8
+
+![image 7](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/4a2ec2eb-40dd-47c7-8429-bf0cd766df53)
+
+![image 8](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/c858b9b4-6100-41a2-a798-07da6295f6b2)
 
 coming back to openlane
 
@@ -2118,8 +2130,8 @@ lets run the synthesis
 ```
 run_synthesis
 ```
-image9
+![image9](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/22900881-0c51-4d1a-9f0a-5643c9473ec9)
 
-we observe the results in the runs folder
+We can observe the results in the runs folder
 
 </details>
