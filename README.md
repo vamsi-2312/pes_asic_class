@@ -2047,7 +2047,7 @@ Two modes of Operation
 Design Space Exploration
 * To Find the best set of low configurations.
 
-OpenLane ASIC Flow
+### **OpenLane ASIC Flow**
 
 ![image 1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/084b3849-3212-4015-91fa-547bae89fd90)
 
