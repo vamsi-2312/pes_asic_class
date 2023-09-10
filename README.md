@@ -1954,14 +1954,14 @@ ISA --> Assembler --> Binary --> RTL --> synthesis of RTL(netlist) --> Hardware(
 
 ### **SoC Design Using Openlane**
 
-ASIC - Application Specific Integrated Circits
+ASIC - Application Specific Integrated Circits<br>
 
 TO build ASIC, we need
 1. RTL Design
 2. EDA Tools
 3. PDK Data
 
-PDK - Process Design Kit
+PDK - Process Design Kit<br>
 Collection of files used to model fabrication process for the EDA tools used to design an IC.
 * Process Design Rules. - DRC, LVS, PEX
 * Device Models
@@ -1970,6 +1970,52 @@ Collection of files used to model fabrication process for the EDA tools used to 
 * etc
 
 ![1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/54aba6a1-f2fa-44bd-b31f-74336ef5d012)
+
+### **Simplified RTL to GDSII Flow**
+
+RTL -> Synthesis -> Floor and Power Planning -> Placement of Cells -> Clock Tree Synthesis  -> Routing -> Sign Off -> GDSII
+
+image 1
+
+*Sythesis*
+Converts RTL to a circuit out of componets from the standard cell library(SCL)
+image 2
+
+*Floor and Power Planning*
+image 3
+image 4
+image 5
+Connecting power supply from VDD.
+
+*Placement*
+place the cells on the floorplan rows, aligned with the sites.
+image 6
+2 steps
+global placement
+image 7
+detailed placement
+image 8
+
+*Clock Tree Synthesis*
+* to deliver the clock to all sequential elements
+* to attain minimum skew
+* usally in shape of tree
+image 7
+
+*Routing*
+Interconnect using metal layers
+image 8
+
+Global Routing - generated routing guides.
+Detailed Routing - Using the routing guides to implement the actual wiring.
+
+*Sign Off*
+Physical Verification
+* DRC(Design rule check)
+* LVS(Layout vs Schematic)
+Timing Verification
+*Static timing analysis
+
 
 ## Open Source EDA Tools.
 
