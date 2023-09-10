@@ -1905,11 +1905,15 @@ Hence we need to be very very careful while useing bocking and non blocking stat
 ## How to talk to computers.
 
 ### Chip design
-image 1
+![processor_diagram](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ab2ea9a6-cfde-467b-93e1-a6395a3c77a5)
+
 let get inside a chip
-image 2
+
+![how_a_chip_looks_inside](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/65ffc9b0-7df3-403f-8f8c-7186f9722c81)
+
+![how_a_typical_chip_looks](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/1fcd35f7-1ea5-45c9-a67e-c71766d62058)
+
 (before ths class we call as system but nw we call as package)
-image 3
 
 PADS - the ways signal comes inside or goes outside<br>
 CORE - all the digital logic recides<br>
@@ -1919,7 +1923,37 @@ Foundry IP's - PLL,adc,dac,sram<br>
 foundry - factory where chip get manufactured<br>
 macros - Soc, SPI<br>
 
+ISA the way we talk to the computer<br>
+
+How to run a C Program on a cpu, there is a certain flow<br>
+
+RISC  Architecture -> Implementation(RTL) -> Layout<br>
+
+C program -> Assemble Level program -> Machine level program<br>
+![flow](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/e32200a0-94ea-4291-b301-3823265cdb1b)
+
+Application software run on hardware<>br
+How do they run?<br>
+
+Applicatioin software -> System software -> Hardware<br>
+
+System software has complier and assembler<br>
+OS handles IO Operation, allocates memory ans low level system functions.<br>
+
+*Application* --> OS --> C code --> *Complier* --> ISA --> *Assembler* --> Binary Code --> *Hardware*<br>
+
+![img1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ce12ff76-b00d-47ad-8012-4fb07494021e)
+
+ISA acts as the abstract interface between C language and the Hardware(Architecture of the Hardware)
+
+ISA --> Assembler --> Binary --> RTL --> synthesis of RTL(netlist) --> Hardware(Physical Implementation of netlist)
+
+![img2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ecc103b9-bbb5-442b-9bde-f97eafe07b08)
+
 ## Soc Design and Openlane
+
+
+
 ## Open Source EDA Tools.
 
 </details>
