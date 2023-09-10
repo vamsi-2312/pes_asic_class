@@ -1973,50 +1973,102 @@ Collection of files used to model fabrication process for the EDA tools used to 
 
 ### **Simplified RTL to GDSII Flow**
 
-RTL -> Synthesis -> Floor and Power Planning -> Placement of Cells -> Clock Tree Synthesis  -> Routing -> Sign Off -> GDSII
+RTL -> Synthesis -> Floor and Power Planning -> Placement of Cells -> Clock Tree Synthesis  -> Routing -> Sign Off -> GDSII<br>
 
-image 1
+![image 1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/31b06242-4c93-48c8-9a11-08b8ada2a2f5)
 
-*Sythesis*
-Converts RTL to a circuit out of componets from the standard cell library(SCL)
-image 2
+*Sythesis*<br>
+Converts RTL to a circuit out of componets from the standard cell library(SCL)<br>
 
-*Floor and Power Planning*
-image 3
-image 4
-image 5
-Connecting power supply from VDD.
+![image 2](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/be6a2553-ae6b-4ebf-89b7-ff977d3147ea)
 
-*Placement*
-place the cells on the floorplan rows, aligned with the sites.
-image 6
+*Floor and Power Planning*<br>
+
+![image 3](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/ff9b648e-62e2-4d10-a659-992ae6ce708a)
+
+![image 4](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/563dfc03-2eee-47c6-853d-7ace4abe23f5)
+
+![imsge 5](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/714b70fa-84d5-4f1e-acb7-a35f6f6c40d0)
+
+Connecting power supply from VDD.<br>
+
+*Placement*<br>
+place the cells on the floorplan rows, aligned with the sites.<br>
+
+![image 6](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/b8f53112-762b-47e7-bb4e-21f850588801)
+
 2 steps
-global placement
-image 7
-detailed placement
-image 8
+* Global placement
+* Detailed placement
 
 *Clock Tree Synthesis*
 * to deliver the clock to all sequential elements
 * to attain minimum skew
 * usally in shape of tree
-image 7
 
-*Routing*
+![image 7](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/6f3e2aee-8769-42cd-a5ed-ff11ada39186)
+
+
+*Routing*<br>
 Interconnect using metal layers
-image 8
 
-Global Routing - generated routing guides.
-Detailed Routing - Using the routing guides to implement the actual wiring.
+![image 8](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/de1603cb-da27-45ca-bdd4-0a1635aeaa75)
 
-*Sign Off*
+Global Routing - generated routing guides.<br>
+Detailed Routing - Using the routing guides to implement the actual wiring.<br>
+
+*Sign Off*<br>
 Physical Verification
 * DRC(Design rule check)
 * LVS(Layout vs Schematic)
 Timing Verification
 *Static timing analysis
 
+### **Introduction to OPENLANE**
+
+OPENLANE is an open-source software platform for designing and verifying digital integrated circuits (ICs). Developed by Efabless, it streamlines the process of ASIC (Application-Specific Integrated Circuit) design by automating many tedious tasks. OPENLANE utilizes open-source EDA (Electronic Design Automation) tools and libraries, fostering collaboration and reducing design cycle times. It has gained popularity within the semiconductor industry for its ability to simplify and accelerate the chip design process, making it accessible to a wider range of designers and engineers.<br>
+
+Main Goal:<br>
+To produce a clean GDSII with no human ntervention.<br>
+
+Clean meaning, no LVD erors, no DRC errors and timing violations(still work in progress).<br>
+
+tuned for skyWater 130nm OpenPDK<br>
+
+Containerized
+* Functional out of the box
+* Instructions to build and run natively will follow
+
+Can be used to generate finall layouts of macros and chips<br>
+
+Two modes of Operation
+* Automonous and Interctive
+
+Design Space Exploration
+* To Find the best set of low configurations.
+
+OpenLane ASIC Flow
+
+![image 1](https://github.com/vamsi-2312/pes_asic_class/assets/142248038/084b3849-3212-4015-91fa-547bae89fd90)
+
++ RTL Synthesis with constraints is done using Yosys and abc
++ The design exploration utility is also used for regression testing.
++ Openlane can run 70 designs and compare the results and find the best one.
++ Scan Insertion
++ Automatic Test Pattern Generation
++ Test Patter Compaction
++ Fault Coverage
++ Fault Simulation
++ Physical Implementation - F&PF,Placement,CTS,Routing
++ Verification is performed everytime netlist is modified.
++ LEC is used to formally confirm that the function did not change after modifying the netlist.
++ Antenna Checker
++ RC Extraction
++ Static timing Analysis
++ DRC and LVS
 
 ## Open Source EDA Tools.
+
+
 
 </details>
