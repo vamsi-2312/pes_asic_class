@@ -1952,6 +1952,22 @@ ISA --> Assembler --> Binary --> RTL --> synthesis of RTL(netlist) --> Hardware(
 
 ## Soc Design and Openlane
 
+### **SoC Design Using Openlane**
+
+ASIC - Application Specific Integrated Circits
+
+TO build ASIC, we need
+1. RTL Design
+2. EDA Tools
+3. PDK Data
+
+PDK - Process Design Kit
+Collection of files used to model fabrication process for the EDA tools used to design an IC.
+* Process Design Rules. - DRC, LVS, PEX
+* Device Models
+* Digital Standard Cell Libraries
+* I/O Libraries
+* etc
 
 
 ## Open Source EDA Tools.
