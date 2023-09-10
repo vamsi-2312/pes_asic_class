@@ -2069,6 +2069,57 @@ Design Space Exploration
 
 ## Open Source EDA Tools.
 
+In terminal
+```
+cd Desktop
+```
 
+we will be using sky130 pdk<br>
+
+i1
+i2
+i3
+image1
+
+Openlane is used to automate rtl to gds flow<br>
+
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+```
+```
+docker
+```
+img1
+```
+./flow.tcl -interactive
+```
+image2
+```
+package reqire openlane 0.9
+```
+list of designs already present in openlane
+image3
+image4
+image5
+
+design setup stage(preparing stage)
+```
+prep -design picorv32a
+```
+image6
+
+we can see that runs getting created
+image 7
+image 8
+
+coming back to openlane
+
+lets run the synthesis
+```
+run_synthesis
+```
+image9
+
+we observe the results in the runs folder
 
 </details>
